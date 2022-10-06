@@ -13,4 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\GriddyController::class, 'show']);
+Route::get('/', [\App\Http\Controllers\GriddyController::class, 'show'])->name('home');
+Route::get('/about', [\App\Http\Controllers\AboutController::class, 'show'])->name('about');
+
+Auth::routes();
+
+Route::get('/art', [App\Http\Controllers\ArtController::class, 'index'])->name('art');
